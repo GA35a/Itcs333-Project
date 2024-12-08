@@ -41,6 +41,7 @@ if (!$result) {
             ?>
         </tbody>
         </table> 
+<<<<<<< HEAD
         
         <button style="background-color:gray;">
         <a href="profile.php">Profile</a>
@@ -51,6 +52,11 @@ if (!$result) {
             Your Bookings
         </a>
     </div>
+=======
+        <button style="background-color:gray;">
+        <a href="profile.php">Profile</a>
+        </button>
+>>>>>>> refs/remotes/origin/main
        
 </body>
 </html>

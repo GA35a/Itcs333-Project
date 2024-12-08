@@ -32,13 +32,17 @@ mysqli_stmt_bind_param($stmt, 'i', $room_id);
 mysqli_stmt_execute($stmt);
 $result_timeslots = mysqli_stmt_get_result($stmt);
 ?>
+<<<<<<< HEAD
 
+=======
+>>>>>>> refs/remotes/origin/main
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="pico-main/css/pico.min.css">
+<<<<<<< HEAD
     <title>Room Details</title>
 </head>
 
@@ -94,11 +98,64 @@ $result_timeslots = mysqli_stmt_get_result($stmt);
                 echo '<button type="submit">Book Now</button>';
                 echo '</form>';
                 echo '</li>';
+=======
+    
+    <title>Room Details</title>
+</head>
+<body>
+    <h1 style="text-align:center;"><?php echo isset($room['name']) ? $room['name'] : 'Room Name Not Found'; ?></h1>
+    <div class="grid">
+  <div>
+    <p><strong>Description:</strong> 
+    <?php 
+    if (!empty($room['description'])) {
+        echo $room['description'];
+    } else {
+        echo 'No description available.';
+    }
+    ?>
+    </p>
+    </div>
+
+  <div>
+    <p><strong>Capacity:</strong> 
+    <?php 
+    if (!empty($room['capacity'])) {
+        echo $room['capacity'];
+    } else {
+        echo 'Not specified.';
+    }
+    ?>
+    </p>
+    </div>
+    <div>
+    <p><strong>Equipment:</strong> 
+    <?php 
+    if (!empty($room['equipment'])) {
+        echo $room['equipment'];
+    } else {
+        echo 'None';
+    }
+    ?>
+    </p>
+    </div>
+    </div>
+    <h2>Available Timeslots</h2>
+    <ul>
+        <?php
+        if ($result_timeslots && mysqli_num_rows($result_timeslots) > 0) {
+            while ($timeslot = mysqli_fetch_assoc($result_timeslots)) {
+                echo '<li>' . $timeslot['start_time'] . ' - ' . $timeslot['end_time'] . '</li>';
+>>>>>>> refs/remotes/origin/main
             }
         } else {
             echo '<p>No available timeslots.</p>';
         }
+<<<<<<< HEAD
     ?>
+=======
+        ?>
+>>>>>>> refs/remotes/origin/main
     </ul>
     <a href="view_rooms.php">Back to Room List</a>
 </body>

@@ -29,7 +29,10 @@ $profile_picture = !empty($user['profile_picture']) ? "uploads/" . $user['profil
             align-items: center; 
             justify-content: center; 
         }
+<<<<<<< HEAD
 
+=======
+>>>>>>> refs/remotes/origin/main
         h1 {
           --pico-font-family: Pacifico, cursive;
           --pico-font-weight: 400;
@@ -42,21 +45,31 @@ $profile_picture = !empty($user['profile_picture']) ? "uploads/" . $user['profil
         }
 
        
+<<<<<<< HEAD
         fieldset {
+=======
+    fieldset {
+>>>>>>> refs/remotes/origin/main
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 2px 10px white;
             width: 600px;            
         }
+<<<<<<< HEAD
 
     </style>
 </head>
 
+=======
+    </style>
+</head>
+>>>>>>> refs/remotes/origin/main
 <body>
 
     <h1>User Profile</h1>
     <img src="<?php echo $profile_picture; ?>" alt="Profile Picture" width="150" height="150">
     <fieldset class="grid">
+<<<<<<< HEAD
         <form action="update_profile.php" method="POST" enctype="multipart/form-data">
             <input type="text" name="username" value="<?php echo $user['username']; ?>" required>
             <input type="email" name="email" value="<?php echo $user['email']; ?>" readonly>
@@ -75,6 +88,25 @@ $profile_picture = !empty($user['profile_picture']) ? "uploads/" . $user['profil
             <a href="view_rooms.php" >Return back to view rooms!</a>
         </form>
     </fieldset>
+=======
+    <form action="update_profile.php" method="POST" enctype="multipart/form-data">
+        <input type="text" name="username" value="<?php echo $user['username']; ?>" required>
+        <input type="email" name="email" value="<?php echo $user['email']; ?>" readonly>
+        <input type="date" name="birthday" value="<?php echo $user['birthday']; ?>" required>
+        <select name="gender" required>
+            <option value="male" <?php if($user['gender'] == 'male') echo 'selected'; ?>>Male</option>
+            <option value="female" <?php if($user['gender'] == 'female') echo 'selected'; ?>>Female</option>
+        </select>
+        <input type="file" name="profile_picture">
+        <button type="submit">Update Profile</button>
+
+        <div role="button" tabindex="0" style="background-color:white;">
+        <a href="logout.php" >Logout</a>
+        </div>
+        <a href="view_rooms.php" >Return back to view rooms!</a>
+    </form>
+</fieldset>
+>>>>>>> refs/remotes/origin/main
 
 </body>
 </html>
